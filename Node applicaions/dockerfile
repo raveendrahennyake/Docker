@@ -1,0 +1,25 @@
+# Base Image
+FROM node:20-alpine
+
+#WDR
+WORKDIR /app
+
+##Package
+COPY package*.json ./
+
+#Install package
+RUN npm install
+
+#Source code
+COPY . .
+
+#Port
+EXPOSE 4000
+
+#run applicarions
+CMD [ "npm" , "start" ]
+
+
+
+
+
